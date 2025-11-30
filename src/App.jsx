@@ -6,18 +6,23 @@ function App() {
     const [ageValue, setAgeValue] = useState('');
     const [messageValue, setMessageValue] = useState('');
     const [newsletterValue, setNewsletterValue] = useState(false);
-    function handleSubmit() {
-        console.log({
-            naam: nameValue,
-            leeftijd: ageValue,
-            opmerking: messageValue,
-            nieuwsbrief: newsletterValue
-        });
+    // function handleSubmit() {
+    //     console.log({
+    //         naam: nameValue,
+    //         leeftijd: ageValue,
+    //         opmerking: messageValue,
+    //         nieuwsbrief: newsletterValue
+    //     });
+    // }
+
+    function handleSubmit(e) {
+        e.preventDefault();
+        console.log(nameValue, ageValue, messageValue, newsletterValue);
     }
 
     return (
         <>
-            <form>
+            <form onSubmit={handleSubmit}>
                 <fieldset>
                     <legend>Gegevens</legend>
                     <label htmlFor="name-field">
@@ -35,31 +40,27 @@ function App() {
                         <input
                             type="number"
                             value={ageValue}
-                            onChange={(e) => setAgeValue(e.target.value)}
+                            onChange={(e) => setAgeValue(parseInt(e.target.value))}
                             id="age-field"
                             name="age"
                             placeholder="0"
                         />
                     </label>
                 </fieldset>
-            </form>
-            <form
-            onSubmit={function(event){
-                event.preventDefault();
-                handleSubmit();
-            }}>
+
                 <fieldset>
                     <legend>Jouw review</legend>
                     <label htmlFor="message-field">
                         Opmerkingen:
                     </label>
                         <textarea
-                            type="text"
-                            value={messageValue}
-                            onChange={(e) => setMessageValue(e.target.value)}
                             id="message-field"
                             name="message"
+                            rows="5"
+                            cols="50"
                             placeholder="Wat vond je van het recept?"
+                            value={messageValue}
+                            onChange={(e) => setMessageValue(e.target.value)}
                         />
 
                     <label htmlFor="form-newsletter" className="checkbox-label">
@@ -73,9 +74,7 @@ function App() {
                         Ik schrijf me in voor de nieuwsbrief
                     </label>
 
-                    <button type="submit">
-                    Versturen
-                    </button>
+                    <button type="submit">Versturen</button>
 
                 </fieldset>
             </form>
