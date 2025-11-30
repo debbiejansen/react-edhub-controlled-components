@@ -1,1 +1,17 @@
 /*Schrijf hier jouw css voor jouw formulier*/
+
+*{
+    margin: 0;
+    padding: 0;
+}
+
+fieldset {
+    padding: 20px;
+    margin: 20px;
+    border-radius: 5px;
+    border: 2px lightgray solid;
+}
+
+#message-field {
+
+}
