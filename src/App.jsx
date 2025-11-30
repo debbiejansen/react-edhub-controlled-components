@@ -35,7 +35,6 @@ function App() {
                     </label>
                 </fieldset>
             </form>
-            {/*TODO*/}
             <form>
                 <fieldset>
                     <legend>Jouw review</legend>
@@ -61,17 +60,11 @@ function App() {
                         />
                         Ik schrijf me in voor de nieuwsbrief
                     </label>
+                    <br /><br />
 
-                    {/*<button*/}
-                    {/*    type="button"*/}
-                    {/*    className={isOn ? "on" : "off"}*/}
-                    {/*    onClick={toggleLight}*/}
-                    {/*>*/}
-                    {/*    {isOn*/}
-                    {/*        ? "Turn off"*/}
-                    {/*        : "Turn on"*/}
-                    {/*    }*/}
-                    {/*</button>*/}
+                    <button type="button">
+                    Versturen
+                    </button>
 
                 </fieldset>
             </form>
