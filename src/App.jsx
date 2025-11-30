@@ -7,7 +7,12 @@ function App() {
     const [messageValue, setMessageValue] = useState('');
     const [newsletterValue, setNewsletterValue] = useState(false);
     function handleSubmit() {
-        console.log("Verstuurd!");
+        console.log({
+            naam: nameValue,
+            leeftijd: ageValue,
+            opmerking: messageValue,
+            nieuwsbrief: newsletterValue
+        });
     }
 
     return (
