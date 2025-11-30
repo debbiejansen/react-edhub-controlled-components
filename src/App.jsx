@@ -5,7 +5,11 @@ function App() {
     const [nameValue, setNameValue] = useState('');
     const [ageValue, setAgeValue] = useState('');
     const [messageValue, setMessageValue] = useState('');
-    const [termsAndConditionsValue, setTermsAndConditionsValue] = useState(false);
+    const [newsletterValue, setNewsletterValue] = useState(false);
+    function handleSubmit() {
+        console.log("Verstuurd!");
+    }
+
     return (
         <>
             <form>
@@ -21,11 +25,10 @@ function App() {
                             name="name"
                         />
                     </label>
-                    <br/><br/>
                     <label htmlFor="age-field">
                         Leeftijd:
                         <input
-                            type="text"
+                            type="number"
                             value={ageValue}
                             onChange={(e) => setAgeValue(e.target.value)}
                             id="age-field"
@@ -35,12 +38,17 @@ function App() {
                     </label>
                 </fieldset>
             </form>
-            <form>
+            <form
+            onSubmit={function(event){
+                event.preventDefault();
+                handleSubmit();
+            }}>
                 <fieldset>
                     <legend>Jouw review</legend>
                     <label htmlFor="message-field">
                         Opmerkingen:
-                        <input
+                    </label>
+                        <textarea
                             type="text"
                             value={messageValue}
                             onChange={(e) => setMessageValue(e.target.value)}
@@ -48,21 +56,19 @@ function App() {
                             name="message"
                             placeholder="Wat vond je van het recept?"
                         />
-                    </label>
-                    <br /><br />
-                    <label htmlFor="form-terms-and-conditions">
+
+                    <label htmlFor="form-newsletter" className="checkbox-label">
                         <input
                             type="checkbox"
                             id="form-newsletter"
                             name="newsletter"
-                            checked={termsAndConditionsValue}
-                            onChange={() => setTermsAndConditionsValue(!termsAndConditionsValue)}
+                            checked={newsletterValue}
+                            onChange={() => setNewsletterValue(!newsletterValue)}
                         />
                         Ik schrijf me in voor de nieuwsbrief
                     </label>
-                    <br /><br />
 
-                    <button type="button">
+                    <button type="submit">
                     Versturen
                     </button>
 
