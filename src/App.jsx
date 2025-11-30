@@ -35,6 +35,7 @@ function App() {
                     </label>
                 </fieldset>
             </form>
+            {/*TODO*/}
             <form>
                 <fieldset>
                     <legend>Jouw review</legend>
@@ -53,13 +54,25 @@ function App() {
                     <label htmlFor="form-terms-and-conditions">
                         <input
                             type="checkbox"
-                            id="form-terms-and-conditions"
-                            name="terms-and-conditions"
+                            id="form-newsletter"
+                            name="newsletter"
                             checked={termsAndConditionsValue}
                             onChange={() => setTermsAndConditionsValue(!termsAndConditionsValue)}
                         />
-                        Ik ga akkoord met de algemene voorwaarden
+                        Ik schrijf me in voor de nieuwsbrief
                     </label>
+
+                    {/*<button*/}
+                    {/*    type="button"*/}
+                    {/*    className={isOn ? "on" : "off"}*/}
+                    {/*    onClick={toggleLight}*/}
+                    {/*>*/}
+                    {/*    {isOn*/}
+                    {/*        ? "Turn off"*/}
+                    {/*        : "Turn on"*/}
+                    {/*    }*/}
+                    {/*</button>*/}
+
                 </fieldset>
             </form>
         </>
